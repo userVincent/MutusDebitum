@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(17 24 39); /* Match Tremor background color */
+  color: #E5E7EB; /* Light text color */
+}
+
+.App {
+  text-align: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.App-header {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #3B82F6; /* Tremor brand color */
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.form {
+  background: #19202d; /* Slightly lighter than the right side */
+  color: #E5E7EB;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  margin-right: 20px;
+}
+
+label {
+  margin-bottom: 5px;
+  text-align: left;
+  display: block;
+}
+
+.results {
+  background: rgb(17, 24, 39); /* Match Tremor component background */
+  color: #E5E7EB;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 3;
+  margin-left: 20px;
+}
