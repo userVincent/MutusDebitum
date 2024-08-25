@@ -60,7 +60,7 @@ function App() {
           />
           <div className="results flex-3 bg-gray-900 text-white p-6 rounded-lg ml-6">
             <Card className="bg-gray-800 shadow-none">
-              {resultData ? <GraphData data={resultData} maxCreditUtilization={formData.max_credit_utilization} /> : <p>No data available</p>}
+              {resultData ? <GraphData data={resultData} maxCreditUtilization={formData.max_credit_utilization} years={formData.years}/> : <p>No data available</p>}
             </Card>
           </div>
         </div>

@@ -39,7 +39,7 @@ function FormComponent({ formData, handleChange, handleSubmit, isLoading }) {
   };
 
   return (
-    <div className="form bg-gray-900 text-white p-6 rounded-lg shadow-lg flex-1 space-y-4">
+    <div className="form bg-gray-900 text-white p-6 rounded-lg shadow-lg flex-1 space-y-4 h-full">
       <TabGroup defaultIndex={0} onChange={setSelectedTab}>
         <TabList variant="solid">
           <Tab>Calculate</Tab>
@@ -176,7 +176,7 @@ function FormComponent({ formData, handleChange, handleSubmit, isLoading }) {
             <p className="text-gray-300 mb-4">
                 Subject to the constraints:
             </p>
-            <BlockMath math={'d_1 = (f_1 \\cdot \\text{Income}_1) - \\text{Income}_1'} />
+            <BlockMath math={'d_1 = d_0 + (f_1 \\cdot \\text{Income}_1) - \\text{Income}_1'} />
             <BlockMath math={'d_i = d_{i-1} + (f_i \\cdot \\text{Income}_i) - \\text{Income}_i + (d_{i-1} \\cdot \\text{Monthly Interest Rate}), \\quad \\forall i > 1'} />
             <p className="text-gray-300 mb-4">
                 Here, <InlineMath math={'d_i'} /> represents the total debt accrued in month <InlineMath math={'i'} />, which accumulates from the previous month’s debt, the current month’s spending, and any interest on the existing debt.
