@@ -118,7 +118,7 @@ function FormComponent({ formData, handleChange, handleSubmit, isLoading }) {
               <div>
                 <label className="block text-sm font-medium text-gray-300">Initial Debt:</label>
                 <NumberInput
-                  placeholder="0 - (Credit Limit * Max Credit Utilization * 90%)"
+                  placeholder="0 - (Credit Limit * Max Credit Utilization * 0.9)"
                   min={0}
                   max={formData.initial_income*formData.initial_credit_pct/100*formData.max_credit_utilization/100*0.9}
                   step={500}
