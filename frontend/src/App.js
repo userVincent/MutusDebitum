@@ -31,7 +31,7 @@ function App() {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/optimal-living/', {
+      const response = await fetch('https://mutusdebitum-870770542177.europe-west1.run.app/api/optimal-living/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
