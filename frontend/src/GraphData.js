@@ -50,7 +50,7 @@ function GraphData({ data, maxCreditUtilization, years = 1 }) {
           'Debt Payment': debtPayment,
           'Spending + Interest Payment': data.monthly_spending[index],
           'Total Debt': data.monthly_debt[index],
-          'Accrued Debt': spendingAboveMeans - debtPayment,
+          'Accrued Debt': spendingAboveMeans + spendingBelowMeans + interestPayment - income,
           'Credit Limit': data.annual_credit_limits[Math.floor(index / 12)],
           'Utilization Limit': data.annual_credit_limits[Math.floor(index / 12)] * (maxCreditUtilization / 100),
           'Spending Factor': (data.monthly_goods_spending[index] - income) / income,
