@@ -28,43 +28,40 @@ The essence of MutusDebitum lies in its approach to financial optimization. Here
 
 We aim to strategically use debt to optimize your spending beyond your income. The key metric we focus on is the **spending factor** for each month, denoted by:
 
-\[ f_i = \frac{\text{Spending}_i}{\text{Income}_i} \]
+$$ f_i = \frac{\text{Spending}_i}{\text{Income}_i} $$
 
-Where \( f_i \) represents the ratio of spending (excluding interest) to income in month \( i \). The goal is to achieve \( f_i > 1 \), indicating that spending exceeds income.
+Where $f_i$ represents the ratio of spending (excluding interest) to income in month $i$. The goal is to achieve $f_i > 1$, indicating that spending exceeds income.
 
 #### **Linear Programming Model**
 
 We formulate this problem as a Linear Programming (LP) model, where the objective function is to maximize the sum of the spending factors across all months:
 
-\[ \text{Maximize} \sum_{i=1}^{n} f_i \]
+$$ \text{Maximize} \sum_{i=1}^{n} f_i $$
 
 **Subject to the following constraints:**
 
 1. **Debt Accumulation:**
-   \[
-   d_1 = d_0 + (f_1 \cdot \text{Income}_1) - \text{Income}_1
-   \]
-   \[
-   d_i = d_{i-1} + (f_i \cdot \text{Income}_i) - \text{Income}_i + (d_{i-1} \cdot \text{Monthly Interest Rate}), \forall i > 1
-   \]
-   Here, \( d_i \) represents the total debt accrued in month \( i \), accumulating from the previous month's debt, current month’s spending, and any interest on the existing debt.
+   
+   $d_1 = d_0 + (f_1 \cdot \text{Income}_1) - \text{Income}_1$
+   
+   $`d_i = d_{i-1} + (f_i \cdot \text{Income}_i) - \text{Income}_i + (d_{i-1} \cdot \text{Monthly Interest Rate}), \forall i > 1`$
+   
+   Here, $d_i$ represents the total debt accrued in month $i$, accumulating from the previous month's debt, current month’s spending, and any interest on the existing debt.
 
-2. **Credit Limit Constraint:**
-   \[
-   d_i \leq \text{Annual Credit Limit} \cdot \text{Max Credit Utilization}, \forall i
-   \]
+3. **Credit Limit Constraint:**
+   
+   $d_i \leq \text{Annual Credit Limit} \cdot \text{Max Credit Utilization}, \forall i$
 
-3. **Spending Factor Bounds:**
-   \[
-   -10 \leq f_i \leq 10, \forall i
-   \]
+5. **Spending Factor Bounds:**
+   
+   $-10 \leq f_i \leq 10, \forall i$
 
-4. **Spending Consistency:**
-   \[
-   |f_{i+1} - f_i| \leq \text{Max Difference}, \forall i
-   \]
+7. **Spending Consistency:**
+   
+   $|f_{i+1} - f_i| \leq \text{Max Difference}, \forall i$
 
 This constraint ensures that spending does not vary too drastically between months, which would otherwise result in erratic financial behavior, especially when interest rates are low or zero.
+
 
 ### Deployment on Google Cloud
 
